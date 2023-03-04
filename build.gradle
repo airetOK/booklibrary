@@ -1,0 +1,25 @@
+plugins {
+    id 'com.github.johnrengelman.shadow'
+}
+
+project.ext {
+    mainClass = 'com.sbezr.booklibrary.BookLibraryApplication'
+}
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'io.dropwizard', name: 'dropwizard-core', version: dropwizardVersion
+}
+
+shadowJar {
+    mergeServiceFiles()
+    exclude 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.SF'
+    manifest {
+        attributes 'Main-Class': mainClass
+    }
+}
