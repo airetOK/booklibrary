@@ -14,6 +14,7 @@ repositories {
 
 dependencies {
     implementation group: 'io.dropwizard', name: 'dropwizard-core', version: dropwizardVersion
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: mockitoVersion
     testImplementation 'org.junit.jupiter:junit-jupiter-api:' + project.property('jUnitTestsVersion')
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:' + project.property('jUnitTestsVersion')
 }
