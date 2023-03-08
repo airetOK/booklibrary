@@ -14,6 +14,12 @@ repositories {
 
 dependencies {
     implementation group: 'io.dropwizard', name: 'dropwizard-core', version: dropwizardVersion
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:' + project.property('jUnitTestsVersion')
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:' + project.property('jUnitTestsVersion')
+}
+
+test {
+    useJUnitPlatform()
 }
 
 shadowJar {
@@ -22,4 +28,5 @@ shadowJar {
     manifest {
         attributes 'Main-Class': mainClass
     }
+    dependsOn test
 }
