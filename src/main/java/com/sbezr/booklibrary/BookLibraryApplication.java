@@ -1,7 +1,7 @@
 package com.sbezr.booklibrary;
 
 import com.sbezr.booklibrary.conf.ApplicationConfiguration;
-import com.sbezr.booklibrary.dao.AbstractDao;
+import com.sbezr.booklibrary.dao.Dao;
 import com.sbezr.booklibrary.dao.BookDao;
 import com.sbezr.booklibrary.dao.InMemoryBookLibrary;
 import com.sbezr.booklibrary.entity.Book;
@@ -21,9 +21,9 @@ public class BookLibraryApplication extends Application<ApplicationConfiguration
     public void run(ApplicationConfiguration configuration, Environment environment)
     {
         final BookResource resource = new BookResource();
-        final InMemoryBookLibrary bookLibrary = InMemoryBookLibrary.getInstance();
+        final InMemoryBookLibrary bookLibrary = new InMemoryBookLibrary();
         // bookDao will be passed in bookResource
-        AbstractDao<Book> bookDao = new BookDao(bookLibrary);
+        Dao<Book> bookDao = new BookDao(bookLibrary);
         environment.jersey().register(resource);
     }
 

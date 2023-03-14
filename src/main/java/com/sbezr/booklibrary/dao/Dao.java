@@ -2,7 +2,7 @@ package com.sbezr.booklibrary.dao;
 
 import java.util.List;
 
-public interface AbstractDao<T> {
+public interface Dao<T> {
 
     List<T> getAll();
 
