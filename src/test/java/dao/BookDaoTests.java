@@ -1,6 +1,9 @@
 package dao;
 
 import com.sbezr.booklibrary.dao.BookDao;
+import com.sbezr.booklibrary.dao.Dao;
+import com.sbezr.booklibrary.dao.InMemoryBookLibrary;
+import com.sbezr.booklibrary.entity.Book;
 import com.sbezr.booklibrary.entity.BookBuilder;
 import java.util.Collections;
 import org.junit.jupiter.api.Test;
@@ -11,14 +14,19 @@ import static org.mockito.Mockito.when;
 public class BookDaoTests
 {
 
-    private final BookDao bookDao = mock(BookDao.class);
+    private final InMemoryBookLibrary bookLibrary = mock(InMemoryBookLibrary.class);
+    private final Dao<Book> bookDao = new BookDao(bookLibrary);
     private final BookBuilder builder = new BookBuilder();
     private static final String AUTHOR = "author";
     private static final String TITLE = "title";
 
     @Test
     public void saveTest() {
-        doNothing().when(bookDao).save(builder
+        doNothing().when(bookLibrary).save(builder
+            .setAuthor(AUTHOR)
+            .setTitle(TITLE)
+            .build());
+        bookDao.save(builder
             .setAuthor(AUTHOR)
             .setTitle(TITLE)
             .build());
@@ -26,7 +34,11 @@ public class BookDaoTests
 
     @Test
     public void updateTest() {
-        doNothing().when(bookDao).update(builder
+        doNothing().when(bookLibrary).update(builder
+            .setAuthor("updatedAuthor")
+            .setTitle("updatedTitle")
+            .build(), AUTHOR, TITLE);
+        bookDao.update(builder
             .setAuthor("updatedAuthor")
             .setTitle("updatedTitle")
             .build(), AUTHOR, TITLE);
@@ -34,12 +46,14 @@ public class BookDaoTests
 
     @Test
     public void deleteTest() {
-        doNothing().when(bookDao).delete(AUTHOR, TITLE);
+        doNothing().when(bookLibrary).delete(AUTHOR, TITLE);
+        bookDao.delete(AUTHOR, TITLE);
     }
 
     @Test
     public void getAllTest() {
-        when(bookDao.getAll()).thenReturn(Collections.emptyList());
+        when(bookLibrary.getAll()).thenReturn(Collections.emptyList());
+        bookDao.getAll();
     }
 
 }
