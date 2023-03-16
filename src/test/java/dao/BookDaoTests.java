@@ -5,55 +5,51 @@ import com.sbezr.booklibrary.dao.Dao;
 import com.sbezr.booklibrary.dao.InMemoryBookLibrary;
 import com.sbezr.booklibrary.entity.Book;
 import com.sbezr.booklibrary.entity.BookBuilder;
-import java.util.Collections;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.verify;
+
 
 public class BookDaoTests
 {
 
-    private final InMemoryBookLibrary bookLibrary = mock(InMemoryBookLibrary.class);
-    private final Dao<Book> bookDao = new BookDao(bookLibrary);
-    private final BookBuilder builder = new BookBuilder();
+    private static InMemoryBookLibrary bookLibrary;
+    private static Dao<Book> bookDao;
+    private static final BookBuilder builder = new BookBuilder();
     private static final String AUTHOR = "author";
     private static final String TITLE = "title";
+    private static Book book;
+
+    @BeforeAll
+    public static void init() {
+        bookLibrary = mock(InMemoryBookLibrary.class);
+        bookDao = new BookDao(bookLibrary);
+        book = builder.setAuthor(AUTHOR).setTitle(TITLE).build();
+    }
 
     @Test
     public void saveTest() {
-        doNothing().when(bookLibrary).save(builder
-            .setAuthor(AUTHOR)
-            .setTitle(TITLE)
-            .build());
-        bookDao.save(builder
-            .setAuthor(AUTHOR)
-            .setTitle(TITLE)
-            .build());
+        bookDao.save(book);
+        verify(bookLibrary).save(book);
     }
 
     @Test
     public void updateTest() {
-        doNothing().when(bookLibrary).update(builder
-            .setAuthor("updatedAuthor")
-            .setTitle("updatedTitle")
-            .build(), AUTHOR, TITLE);
-        bookDao.update(builder
-            .setAuthor("updatedAuthor")
-            .setTitle("updatedTitle")
-            .build(), AUTHOR, TITLE);
+        bookDao.update(book, AUTHOR, TITLE);
+        verify(bookLibrary).update(book, AUTHOR, TITLE);
     }
 
     @Test
     public void deleteTest() {
-        doNothing().when(bookLibrary).delete(AUTHOR, TITLE);
         bookDao.delete(AUTHOR, TITLE);
+        verify(bookLibrary).delete(AUTHOR, TITLE);
     }
 
     @Test
     public void getAllTest() {
-        when(bookLibrary.getAll()).thenReturn(Collections.emptyList());
         bookDao.getAll();
+        verify(bookLibrary).getAll();
     }
 
 }
