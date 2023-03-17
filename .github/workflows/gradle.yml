@@ -29,4 +29,6 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
     - name: Build with Gradle
-      run: gradle shadowJar
+      run: |
+        ./gradlew wrapper --gradle-version=6.8.3
+        ./gradle shadowJar
