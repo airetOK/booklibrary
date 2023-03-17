@@ -30,6 +30,4 @@ jobs:
         distribution: 'temurin'
     - name: Build with Gradle
       working-directory: ./book-library
-      uses: ./gradlew
-      with:
-        arguments: shadowJar
+      run: gradle shadowJar
