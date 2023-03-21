@@ -1,11 +1,11 @@
 package com.sbezr.booklibrary;
 
 import com.sbezr.booklibrary.conf.ApplicationConfiguration;
-import com.sbezr.booklibrary.dao.Dao;
 import com.sbezr.booklibrary.dao.BookDao;
 import com.sbezr.booklibrary.dao.InMemoryBookLibrary;
-import com.sbezr.booklibrary.entity.Book;
 import com.sbezr.booklibrary.resource.BookResource;
+import com.sbezr.booklibrary.service.BookService;
+import com.sbezr.booklibrary.service.impl.BookServiceImpl;
 import io.dropwizard.Application;
 import io.dropwizard.configuration.ResourceConfigurationSourceProvider;
 import io.dropwizard.setup.Bootstrap;
@@ -20,10 +20,11 @@ public class BookLibraryApplication extends Application<ApplicationConfiguration
     @Override
     public void run(ApplicationConfiguration configuration, Environment environment)
     {
-        final BookResource resource = new BookResource();
         final InMemoryBookLibrary bookLibrary = new InMemoryBookLibrary();
-        // bookDao will be passed in bookResource
-        Dao<Book> bookDao = new BookDao(bookLibrary);
+        final BookDao bookDao = new BookDao(bookLibrary);
+        // book service would be injected to book resource in the future
+        final BookService bookService = new BookServiceImpl(bookDao);
+        final BookResource resource = new BookResource();
         environment.jersey().register(resource);
     }
 
