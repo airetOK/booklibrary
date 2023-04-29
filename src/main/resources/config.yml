@@ -1,7 +1,16 @@
 server:
-  type: simple
   applicationContextPath: /booklibrary
   adminContextPath: /admin
-  connector:
-    type: http
-    port: 8081
+  applicationConnectors:
+    - type: http
+      port: 8082
+
+keycloakConfiguration:
+  realm: bshevRealm
+  auth-server-url: http://0.0.0.0:8090/
+  ssl-required: external
+  resource: resource-server
+  verify-token-audience: true
+  credentials:
+    secret: zKN07TVEp46GS7Zc2bNHGc8VOMaEnf8i
+  confidential-port: 0
