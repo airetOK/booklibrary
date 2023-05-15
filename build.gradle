@@ -16,7 +16,7 @@ repositories {
 dependencies {
     implementation group: 'io.dropwizard', name: 'dropwizard-core', version: dropwizardVersion
     implementation group: 'org.keycloak', name: 'keycloak-jaxrs-oauth-client', version: '21.1.0'
-    implementation group: 'org.keycloak', name: 'keycloak-jetty94-adapter', version: '21.1.0'
+//    implementation group: 'org.keycloak', name: 'keycloak-jetty94-adapter', version: '21.1.0'
     implementation group: 'de.ahus1.keycloak.dropwizard', name: 'keycloak-dropwizard', version: '1.2.0'
 
     testImplementation group: 'org.mockito', name: 'mockito-core', version: mockitoVersion
