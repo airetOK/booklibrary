@@ -7,10 +7,10 @@ server:
 
 keycloakConfiguration:
   realm: bshevRealm
-  auth-server-url: http://0.0.0.0:8090/
+  auth-server-url: http://hello:8080/
   ssl-required: external
   resource: resource-server
-  verify-token-audience: true
+  verify-token-audience: false
   credentials:
-    secret: zKN07TVEp46GS7Zc2bNHGc8VOMaEnf8i
+    secret: npoWdF1FaztS7jCsj0DRqGxF5obi3SuW
   confidential-port: 0
