@@ -1,6 +1,6 @@
-package com.sbezr.booklibrary.dao;
+package com.booklibrary.dao;
 
-import com.sbezr.booklibrary.entity.Book;
+import com.booklibrary.entity.Book;
 import java.util.List;
 
 public class BookDao implements Dao<Book>

@@ -1,4 +1,4 @@
-package com.sbezr.booklibrary.conf;
+package com.booklibrary.conf;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

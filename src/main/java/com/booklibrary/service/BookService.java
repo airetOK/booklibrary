@@ -1,6 +1,7 @@
-package com.sbezr.booklibrary.service;
+package com.booklibrary.service;
 
-import com.sbezr.booklibrary.entity.Book;
+import com.booklibrary.entity.Book;
+
 import java.util.List;
 
 public interface BookService

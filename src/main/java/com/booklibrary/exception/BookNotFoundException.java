@@ -1,4 +1,4 @@
-package com.sbezr.booklibrary.exception;
+package com.booklibrary.exception;
 public class BookNotFoundException extends RuntimeException {
 
     public BookNotFoundException(String message) {

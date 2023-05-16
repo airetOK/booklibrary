@@ -1,4 +1,4 @@
-package com.sbezr.booklibrary.entity;
+package com.booklibrary.entity;
 
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package com.sbezr.booklibrary.entity;
+package com.booklibrary.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

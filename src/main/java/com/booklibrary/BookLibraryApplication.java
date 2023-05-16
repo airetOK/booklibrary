@@ -1,11 +1,11 @@
-package com.sbezr.booklibrary;
+package com.booklibrary;
 
-import com.sbezr.booklibrary.conf.ApplicationConfiguration;
-import com.sbezr.booklibrary.dao.BookDao;
-import com.sbezr.booklibrary.dao.InMemoryBookLibrary;
-import com.sbezr.booklibrary.resource.BookResource;
-import com.sbezr.booklibrary.service.BookService;
-import com.sbezr.booklibrary.service.impl.BookServiceImpl;
+import com.booklibrary.conf.ApplicationConfiguration;
+import com.booklibrary.dao.BookDao;
+import com.booklibrary.resource.BookResource;
+import com.booklibrary.service.BookService;
+import com.booklibrary.service.impl.BookServiceImpl;
+import com.booklibrary.dao.InMemoryBookLibrary;
 
 import de.ahus1.keycloak.dropwizard.KeycloakBundle;
 import de.ahus1.keycloak.dropwizard.KeycloakConfiguration;

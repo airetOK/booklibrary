@@ -1,9 +1,9 @@
 package dao;
 
-import com.sbezr.booklibrary.dao.InMemoryBookLibrary;
-import com.sbezr.booklibrary.entity.Book;
-import com.sbezr.booklibrary.entity.BookBuilder;
-import com.sbezr.booklibrary.exception.BookNotFoundException;
+import com.booklibrary.dao.InMemoryBookLibrary;
+import com.booklibrary.entity.Book;
+import com.booklibrary.entity.BookBuilder;
+import com.booklibrary.exception.BookNotFoundException;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.ArrayList;

@@ -1,8 +1,9 @@
-package com.sbezr.booklibrary.service.impl;
+package com.booklibrary.service.impl;
 
-import com.sbezr.booklibrary.dao.BookDao;
-import com.sbezr.booklibrary.entity.Book;
-import com.sbezr.booklibrary.service.BookService;
+import com.booklibrary.dao.BookDao;
+import com.booklibrary.entity.Book;
+import com.booklibrary.service.BookService;
+
 import java.util.List;
 
 public class BookServiceImpl implements BookService

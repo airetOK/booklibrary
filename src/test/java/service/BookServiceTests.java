@@ -1,10 +1,10 @@
 package service;
 
-import com.sbezr.booklibrary.dao.BookDao;
-import com.sbezr.booklibrary.entity.Book;
-import com.sbezr.booklibrary.entity.BookBuilder;
-import com.sbezr.booklibrary.service.BookService;
-import com.sbezr.booklibrary.service.impl.BookServiceImpl;
+import com.booklibrary.dao.BookDao;
+import com.booklibrary.entity.Book;
+import com.booklibrary.entity.BookBuilder;
+import com.booklibrary.service.BookService;
+import com.booklibrary.service.impl.BookServiceImpl;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.mockito.Mockito.mock;

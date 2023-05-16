@@ -1,8 +1,9 @@
-package com.sbezr.booklibrary.dao;
+package com.booklibrary.dao;
 
-import com.sbezr.booklibrary.entity.Book;
-import com.sbezr.booklibrary.entity.BookBuilder;
-import com.sbezr.booklibrary.exception.BookNotFoundException;
+import com.booklibrary.entity.Book;
+import com.booklibrary.entity.BookBuilder;
+import com.booklibrary.exception.BookNotFoundException;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.sbezr.booklibrary.dao;
+package com.booklibrary.dao;
 
 import java.util.List;
 

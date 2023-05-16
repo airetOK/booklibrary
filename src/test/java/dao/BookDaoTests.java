@@ -1,10 +1,10 @@
 package dao;
 
-import com.sbezr.booklibrary.dao.BookDao;
-import com.sbezr.booklibrary.dao.Dao;
-import com.sbezr.booklibrary.dao.InMemoryBookLibrary;
-import com.sbezr.booklibrary.entity.Book;
-import com.sbezr.booklibrary.entity.BookBuilder;
+import com.booklibrary.dao.BookDao;
+import com.booklibrary.dao.Dao;
+import com.booklibrary.dao.InMemoryBookLibrary;
+import com.booklibrary.entity.Book;
+import com.booklibrary.entity.BookBuilder;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.mockito.Mockito.mock;
