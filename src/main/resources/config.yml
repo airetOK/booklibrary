@@ -5,6 +5,9 @@ server:
     - type: http
       port: 8082
 
+authentication:
+  tokenSecret: npoWdF1FaztS7jCsj0DRqGxF5obi3SuW
+
 keycloakConfiguration:
   realm: bshevRealm
   auth-server-url: http://hello:8080/

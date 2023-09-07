@@ -4,6 +4,7 @@ networks:
     external: true
 services:
   book-auth:
+    build: .
     image: "book-auth"
     container_name: book-auth
     ports:

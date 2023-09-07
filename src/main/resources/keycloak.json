@@ -1,11 +1,11 @@
 {
   "realm": "bshevRealm",
-  "auth-server-url": "http://localhost:8080/",
+  "auth-server-url": "http://hello:8080/",
   "ssl-required": "external",
   "resource": "resource-server",
   "verify-token-audience": true,
   "credentials": {
-    "secret": "gINDxHt6n8fl1swUnM9hq9XT2KI8BtLj"
+    "secret": "npoWdF1FaztS7jCsj0DRqGxF5obi3SuW"
   },
   "confidential-port": 0,
   "policy-enforcer": {}

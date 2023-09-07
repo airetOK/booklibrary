@@ -19,6 +19,8 @@ dependencies {
 //    implementation group: 'org.keycloak', name: 'keycloak-jetty94-adapter', version: '21.1.0'
     implementation group: 'org.keycloak', name: 'keycloak-authz-client', version: '21.1.1'
     implementation group: 'de.ahus1.keycloak.dropwizard', name: 'keycloak-dropwizard', version: '1.2.0'
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'io.jsonwebtoken:jjwt:0.9.1'
 
     testImplementation group: 'org.mockito', name: 'mockito-core', version: mockitoVersion
     testImplementation 'org.junit.jupiter:junit-jupiter-api:' + project.property('jUnitTestsVersion')

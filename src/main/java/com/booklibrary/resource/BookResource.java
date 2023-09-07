@@ -15,10 +15,6 @@ import javax.ws.rs.core.MediaType;
 
 import de.ahus1.keycloak.dropwizard.User;
 import io.dropwizard.auth.Auth;
-import org.keycloak.KeycloakSecurityContext;
-import org.keycloak.authorization.client.AuthzClient;
-import org.keycloak.authorization.client.ClientAuthorizationContext;
-import org.keycloak.representations.idm.authorization.AuthorizationRequest;
 
 @Path("/book")
 @Produces(MediaType.APPLICATION_JSON)
@@ -32,14 +28,12 @@ public class BookResource {
     public List<Book> getAll(@Auth User user, @Context ContainerRequestContext requestContext) {
         HttpServletRequest request =
                 (HttpServletRequest) requestContext.getProperty(HttpServletRequest.class.getName());
-        KeycloakSecurityContext securityContext =
-                (KeycloakSecurityContext) request.getAttribute(KeycloakSecurityContext.class.getName());
-        ClientAuthorizationContext cast = ClientAuthorizationContext.class.cast(securityContext.getAuthorizationContext());
-        AuthzClient client = cast.getClient();
-
-        AuthorizationRequest authorizationRequest = new AuthorizationRequest();
-        authorizationRequest.setAudience();
-        client.authorization().authorize()
+//        KeycloakSecurityContext securityContext =
+//                (KeycloakSecurityContext) request.getAttribute(KeycloakSecurityContext.class.getName());
+/*
+        securityContext.getAuthorizationContext();*/
+//        identifyUser(null, securityContext.getTokenString());
+//        AuthorizationResponse authorize = client.authorization().authorize();
         return Collections.singletonList(new Book("J.K.Rowling", "Harry Potter"));
     }
 }
